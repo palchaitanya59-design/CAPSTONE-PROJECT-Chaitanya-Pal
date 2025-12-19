@@ -1,0 +1,473 @@
+/* Custom CSS Variables for Consistency */
+:root {
+    --primary-color: #A03131; /* Deep Red/Maroon */
+    --secondary-color: #333;
+    --text-dark: #222;
+    --text-light: #fff;
+    --background-light: #f7f7f7;
+    --background-dark: #2c2c2c;
+    --spacing-xs: 0.5rem;
+    --spacing-s: 1rem;
+    --spacing-m: 2rem;
+    --spacing-l: 3rem;
+    --font-family: 'Poppins', sans-serif;
+    font-size: 100%; /* Default 16px root font size */
+}
+
+/* Global Reset and Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: var(--spacing-s);
+}
+h2{
+    @keyframes colorChange {
+    0%   { color: #ff0000; }   /* Red */
+    25%  { color: #00aaff; }   /* Blue */
+    50%  { color: #00cc44; }   /* Green */
+    75%  { color: #ff9900; }   /* Orange */
+    100% { color: #ff00ff; }   /* Pink */
+}
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #cc4444; /* Lighter red */
+}
+
+.cta-button, .subscribe-button, .add-to-cart-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease; /* Transition for hover effects */
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.cta-button:hover, .subscribe-button:hover, .add-to-cart-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+}
+
+/* --- HEADER / NAVIGATION (Flexbox) --- */
+.site-header {
+    background-color: var(--text-light);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-s) var(--spacing-m);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.primary-nav ul {
+    list-style: none;
+    display: flex; /* Flexbox for horizontal menu */
+    gap: var(--spacing-m);
+}
+
+.primary-nav a {
+    color: var(--text-dark);
+    font-weight: 400;
+    padding: 0.5rem;
+}
+
+.header-actions {
+    display: flex; /* Flexbox for icons and search */
+    align-items: center;
+    gap: var(--spacing-s);
+}
+
+.search-form {
+    display: none; /* Hide on desktop for simplicity, but could be a full search bar */
+}
+
+.icon-link {
+    font-size: 1.2rem;
+    position: relative;
+    color: var(--secondary-color);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-radius: 50%;
+    padding: 1px 5px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* --- HERO BANNER --- */
+.hero-banner {
+    background: url('images/hero-banner.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+    padding: var(--spacing-l) var(--spacing-s);
+}
+
+.hero-content {
+    max-width: 600px;
+    animation: fadeIn 1s ease-out forwards; /* Keyframe animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-banner h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,7,0,1);
+}
+
+.hero-banner p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-m);
+}
+
+.flash-sale-timer {
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 0.75rem 0;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.timer {
+    font-weight: 700;
+    color: #ffc107;
+}
+
+/* --- PRODUCT LISTING SECTION (Flexbox & Grid) --- */
+.product-listing-section {
+    display: flex; /* Flexbox for the main layout: Sidebar + Grid */
+    max-width: 1200px;
+    margin: var(--spacing-l) auto;
+    gap: var(--spacing-m);
+    padding: 0 var(--spacing-m);
+}
+
+.filter-sidebar {
+    flex: 0 0 250px; /* Fixed width sidebar on desktop */
+    padding: var(--spacing-m) var(--spacing-s);
+    background-color: var(--text-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.filter-sidebar fieldset {
+    border: none;
+    margin-bottom: var(--spacing-m);
+}
+
+.filter-sidebar legend {
+    font-weight: 600;
+    margin-bottom: var(--spacing-s);
+    font-size: 1.1rem;
+}
+
+.filter-sidebar label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    cursor: pointer;
+}
+
+.product-grid {
+    flex-grow: 1;
+    display: grid; /* CSS Grid for product cards */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-m);
+}
+
+.product-card {
+    background-color: var(--text-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: var(--spacing-s);
+    text-align: center;
+}
+
+.price {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.add-to-cart-btn {
+    background-color: #5cb85c; /* Green for add to cart */
+    color: var(--text-light);
+    width: 100%;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #4cae4c;
+}
+
+/* --- TESTIMONIALS --- */
+.testimonials-section {
+    padding: var(--spacing-l) var(--spacing-m);
+    text-align: center;
+    background-color: var(--text-light);
+}
+
+.testimonial-grid {
+    max-width: 1200px;
+    margin: var(--spacing-m) auto;
+    display: flex; /* Flexbox for testimonials */
+    gap: var(--spacing-m);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, basis */
+    padding: var(--spacing-m);
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-style: italic;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: var(--spacing-s);
+}
+
+/* --- NEWSLETTER FORM --- */
+.newsletter-section {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: var(--spacing-l) var(--spacing-m);
+    text-align: center;
+}
+
+.newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-form {
+    display: flex; /* Flexbox for input and button */
+    margin-top: var(--spacing-m);
+    gap: var(--spacing-s);
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.subscribe-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+/* --- FOOTER (CSS Grid) --- */
+.site-footer {
+    background-color: var(--secondary-color);
+    color: #ccc;
+    padding: var(--spacing-l) var(--spacing-m);
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid; /* CSS Grid for footer columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-l);
+    padding-bottom: var(--spacing-m);
+    border-bottom: 1px solid #444;
+}
+
+.footer-column h4 {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-s);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column a {
+    color: #aaa;
+    display: block;
+    padding: 0.25rem 0;
+}
+
+.footer-column a:hover {
+    color: var(--primary-color);
+}
+
+.social-links a {
+    font-size: 1.2rem;
+    margin-right: var(--spacing-s);
+}
+
+.copyright-info {
+    text-align: center;
+    padding-top: var(--spacing-s);
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+
+/* Tablet breakpoint (~768px) */
+@media (max-width: 768px) {
+    /* Header adjustments: stack logo/nav/actions or simplify */
+    .header-top {
+        flex-wrap: wrap; /* Allow wrapping */
+        padding: var(--spacing-s);
+    }
+
+    .logo {
+        flex-basis: 100%; /* Take full width */
+        text-align: center;
+        margin-bottom: var(--spacing-s);
+    }
+
+    .primary-nav {
+        flex-basis: 100%;
+        order: 1; /* Move navigation below logo */
+    }
+
+    .primary-nav ul {
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .header-actions {
+        order: 2; /* Move actions below logo */
+        margin: auto;
+    }
+
+    /* Product Listing: Stack sidebar and grid */
+    .product-listing-section {
+        flex-direction: column; /* Stack sidebar and product grid */
+        gap: var(--spacing-s);
+    }
+
+    .filter-sidebar {
+        flex: auto;
+        width: 100%;
+    }
+
+    .product-grid {
+        /* Grid adjusts automatically with auto-fit, but we can ensure a 2-column layout */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-grid {
+        flex-direction: column; /* Stack testimonials vertically */
+    }
+
+    .newsletter-form {
+        flex-direction: column; /* Stack email and subscribe button */
+    }
+
+    .newsletter-form input, .subscribe-button {
+        width: 100%;
+    }
+}
+
+/* Mobile breakpoint (≤480px) */
+@media (max-width: 480px) {
+    .hero-banner h2 {
+        font-size: 2rem;
+    }
+
+    .primary-nav ul {
+        flex-wrap: wrap; /* Allow navigation items to wrap */
+        justify-content: center;
+    }
+
+    .product-grid {
+        /* Single column product grid on small screens */
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer: Grid adapts to one column due to minmax */
+}

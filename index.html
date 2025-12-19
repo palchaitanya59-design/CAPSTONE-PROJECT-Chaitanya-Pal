@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashionista - E-commerce Store UI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-top">
+            <h1 class="logo">Fashionzone</h1>
+            <nav class="primary-nav">
+                <ul>
+                    <li><href="#">New Arrivals</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Sale</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <form class="search-form">
+                    <input type="search" placeholder="Search for products" aria-label="Search for products">
+                    <button type="submit" aria-label="Search">🔍</button>
+                </form>
+                <a href="#" class="icon-link" aria-label="My Account">👤</a>
+                <a href="#" class="icon-link" aria-label="Shopping Cart">🛒<span class="cart-count">3</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h2>Winter Sale is Here!</h2>
+                <p style="color: blueviolet;">Up to 50% off on selected styles. Refresh your wardrobe with the latest trends.</p>
+                <a href="#products class="cta-button>Shop Now</a>
+            </div>
+            <div class="flash-sale-timer">
+                <p>Flash Sale: Extra 20% OFF! Ends in <span class="timer">02 : 15 : 42</span></p>
+            </div>
+        </section>
+
+        <section class="product-listing-section">
+            <aside class="filter-sidebar">
+                <h3>Filters</h3>
+                <form class="filters-form">
+                    <fieldset>
+                        <legend>Category</legend>
+                        <label><input type="checkbox" name="category" value="men"> Men</label>
+                        <label><input type="checkbox" name="category" value="women"> Women</label>
+                        <label><input type="checkbox" name="category" value="accessories"> Accessories</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Price</legend>
+                        <label><input type="radio" name="price" value="under-50"> Under $50</label>
+                        <label><input type="radio" name="price" value="50-100"> $50 - $100</label>
+                        <label><input type="radio" name="price" value="100-plus"> $100+</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Color</legend>
+                        <label><input type="checkbox" name="color" value="black"> Black</label>
+                        <label><input type="checkbox" name="color" value="white"> White</label>
+                        <label><input type="checkbox" name="color" value="blue"> Blue</label>
+                    </fieldset>
+                    <button type="reset" class="reset-button">Clear Filters</button>
+                </form>
+            </aside>
+
+            <article class="product-grid" id="products">
+                <div class="product-card">
+                    <img src="pic1.jpg" alt="A model wearing a stylish denim jacket and sunglasses." class="product-image">
+                    <div class="product-info">
+                        <h4>Slim-Fit Denim Jacket</h4>
+                        <p class="price">$79.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="pic2.jpg" alt="A woman in a cozy, chunky knit sweater." class="product-image">
+                    <div class="product-info">
+                        <h4>Oversized Knit Sweater</h4>
+                        <p class="price">$59.50</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    
+            <article class="product-grid" id="products">
+                <div class="product-card">
+                    <img src="pic3.jpg" alt="A UNISEX multipuropse hoody for both men and women." class="product-image">
+                    <div class="product-info">
+                        <h4>A special Hoody...</h4>
+                        <p class="price">$72.49</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+
+                          <div class="product-card">
+                    <img src="pic4.jpg" alt="Very comfortable." class="product-image">
+                    <div class="product-info">
+                        <h4>Baggy Jeans for man</h4>
+                        <p class="price">$44.50</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+
+                          <div class="product-card">
+                    <img src="pic5.jpg" alt="Protection." class="product-image">
+                    <div class="product-info">
+                        <h4>A protectable sunglasses from sunglight and radiations</h4>
+                        <p class="price">$40.00</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+
+                          <div class="product-card">
+                    <img src="pic6.jpg" alt="Large space." class="product-image">
+                    <div class="product-info">
+                        <h4>A decent Handbag for woman and girls</h4>
+                        <p class="price">$77.90</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+            
+                </div>
+                
+                <div class="product-card">...</div>
+                <div class="product-card">...</div>
+                <div class="product-card">...</div>
+                <div class="product-card">...</div>
+            </article>
+        </section>
+
+        <section class="testimonials-section">
+            <h3>What Our Customers Say</h3>
+            <div class="testimonial-grid">
+                <blockquote class="testimonial-card">
+                    <img src="img1.jpg" alt="Profile picture of Emily R." class="user-avatar">
+                    <p>"Absolutely love the quality and fast shipping! My new favorite store."</p>
+                    <footer>— Amellie Kerr.</footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <img src="vk.jpg" alt="Profile picture of James K." class="user-avatar">
+                    <p>"Great selection and amazing deals. The flash sale was a steal!"</p>
+                    <footer>— Virat Kohli</footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <img src="rs.jpg" alt="Profile picture of Sophia L." class="user-avatar">
+                    <p>"Customer service was super helpful. Will definitely shop again."</p>
+                    <footer>— Rohit Sharma.</footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h3>Stay in the Loop!</h3>
+                <p>Sign up for exclusive offers, new arrivals, and more.</p>
+                <form class="newsletter-form">
+                    <label for="email" class="sr-only">Your email address</label>
+                    <input type="email" id="email" placeholder="Your email address" required>
+                    <button type="submit" class="subscribe-button">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Order History</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-info">
+            <p>&copy; 2025 Fashionzone All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
